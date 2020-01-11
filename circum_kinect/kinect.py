@@ -2,10 +2,8 @@ import click
 import circum.endpoint
 import copy
 import logging
-import os
 
 from threading import Semaphore, Thread
-import importlib.machinery
 
 
 logger = logging.getLogger(__name__)
@@ -17,7 +15,7 @@ updated = False
 
 def _get_targets():
     raise NotImplementedError()
-    return targets
+    return []
 
 
 def _update_thread():
