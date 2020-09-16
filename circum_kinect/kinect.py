@@ -1,9 +1,10 @@
-import click
-import circum.endpoint
 import copy
 import logging
-
 from threading import Semaphore, Thread
+
+import circum.endpoint
+
+import click
 
 
 logger = logging.getLogger(__name__)
