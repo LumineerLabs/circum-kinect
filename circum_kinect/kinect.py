@@ -56,8 +56,6 @@ def run_kinect(kinect_args: {}) -> {}:
     return ret
 
 
-@click.command()
-@click.pass_context
 def webcam(ctx):
     global tracking_semaphore
     tracking_semaphore = Semaphore()
@@ -65,4 +63,10 @@ def webcam(ctx):
     tracker_thread = Thread(target=_update_thread)
     tracker_thread.daemon = True
     tracker_thread.start()
-    circum.endpoint.start_endpoint(ctx, "cam", run_kinect)
+    circum.endpoint.start_endpoint(ctx, "kinect", run_kinect)
+
+
+@click.command()
+@click.pass_context
+def webcam_command(ctx):
+    webcam(ctx)

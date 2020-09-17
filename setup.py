@@ -29,7 +29,7 @@ setup(
     ],
     entry_points={
         'circum.sensors': [
-            'kinect=circum_kinect.kinect:kinect'
+            'kinect=circum_kinect.kinect:kinect_command'
         ]
     },
     extras_require={
