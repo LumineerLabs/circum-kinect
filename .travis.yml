@@ -6,9 +6,9 @@ python:
 - '3.7'
 - '3.8'
 before_install:
-- pip install flake8
+- python -m pip install --upgrade pip
 install:
-- pip install .
+- pip install --upgrade .[lint]
 stages:
 - lint
 - test
