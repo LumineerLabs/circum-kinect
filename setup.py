@@ -25,7 +25,17 @@ setup(
     install_requires=[
         'circum',
         'click',
-        'setuptools-git-version'
+        'pykinect',
+        'pykinect2',
+
+    ],
+    setup_requires=[
+        'setuptools',
+        'setuptools-git-version',
+    ],
+    tests_require=[
+        'pytest',
+        'pytest-cov',
     ],
     entry_points={
         'circum.sensors': [
