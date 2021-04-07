@@ -7,12 +7,18 @@ with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
     long_description = f.read()
 
 
+test_requirements = [
+    'pytest',
+    'pytest-cov',
+]
+
 setup(
     name='circum_kinect',
     version_format='{tag}',
     author="Lane Haury",
     author_email="lane@lumineerlabs.com",
     description="Kinect sensor plugin for circum.",
+    license="MIT",
     long_description=long_description,
     long_description_content_type='text/markdown',
     url="https://github.com/LumineerLabs/circum-kinect",
@@ -25,21 +31,15 @@ setup(
     install_requires=[
         'circum',
         'click',
-        'pykinect',
-        'pykinect2',
-
     ],
     setup_requires=[
         'setuptools',
         'setuptools-git-version',
     ],
-    tests_require=[
-        'pytest',
-        'pytest-cov',
-    ],
+    tests_require=test_requirements,
     entry_points={
         'circum.sensors': [
-            'kinect=circum_kinect.kinect:kinect_command'
+            'kinect=circum_kinect.kinect:kinect'
         ]
     },
     extras_require={
@@ -50,6 +50,13 @@ setup(
             'flake8-comprehensions',
             'flake8-bandit',
             'flake8-bugbear',
-        ]
+        ],
+        'pykinect': [
+            'pykinect @ https://github.com/LumineerLabs/PTVS/archive/9c9b02416e46a8661fd324a5d66f9b32dff0b55a.zip'
+        ],
+        'pykinect2': [
+            'pykinect2 @ https://github.com/LumineerLabs/PyKinect2/archive/69a2c5a70f40593acdb128e886249033c194f3b0.zip',
+        ],
+        'test': test_requirements,
     }
 )
