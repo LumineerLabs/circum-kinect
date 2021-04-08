@@ -55,7 +55,7 @@ setup(
             'pykinect @ https://github.com/LumineerLabs/PTVS/archive/9c9b02416e46a8661fd324a5d66f9b32dff0b55a.zip'
         ],
         'pykinect2': [
-            'pykinect2 @ https://github.com/LumineerLabs/PyKinect2/archive/69a2c5a70f40593acdb128e886249033c194f3b0.zip',
+            'pykinect2 @ https://github.com/LumineerLabs/PyKinect2/archive/81f9a55d5ceeec342dc0c95b0f8084b5816aca08.zip',
         ],
         'test': test_requirements,
     }
