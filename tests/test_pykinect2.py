@@ -1,4 +1,4 @@
-from unittest.mock import call, patch, MagicMock, Mock
+from unittest.mock import call, patch
 
 from circum_kinect.pykinect2 import init_pykinect2, pykinect2_update_thread
 
@@ -21,8 +21,8 @@ class FakeBody:
         self.is_tracked = is_tracked
         self.joints = {}
 
-    def set_joint(self, id, position):
-        self.joints[id] = position
+    def set_joint(self, joint_id, position):
+        self.joints[joint_id] = position
 
 
 class FakeBodyFrame:
