@@ -1,4 +1,4 @@
-from unittest.mock import MagicMock, call, patch
+from unittest.mock import MagicMock, call
 
 from circum_kinect.pykinect import init_pykinect, pykinect_update_thread
 
@@ -9,16 +9,17 @@ class FakeFrame:
     def __init__(self, skeletons):
         self.SkeletonData = skeletons
 
+
 class FakeSkeleton:
     def __init__(self, position):
         self.SkeletonPositions = position
 
 
 def test_init(pykinect_mock):
-        init_pykinect()
+    init_pykinect()
 
-        pykinect_mock.assert_has_calls([call()])
-        assert pykinect_mock.enabled
+    pykinect_mock.assert_has_calls([call()])
+    assert pykinect_mock.enabled
 
 
 def test_update_thread_one_skeleton(pykinect_mock):
@@ -32,7 +33,7 @@ def test_update_thread_one_skeleton(pykinect_mock):
     tracks, updated = pykinect_update_thread(pykinect_mock)
 
     assert updated
-    assert tracks == [{'x': 0, 'y':1, 'z': 2}]
+    assert tracks == [{'x': 0, 'y': 1, 'z': 2}]
 
 
 def test_update_thread_multiple_skeletons(pykinect_mock):
@@ -50,6 +51,6 @@ def test_update_thread_multiple_skeletons(pykinect_mock):
 
     assert updated
     assert tracks == [
-        {'x': 0, 'y':1, 'z': 2},
-        {'x': 3, 'y':4, 'z': 5}
+        {'x': 0, 'y': 1, 'z': 2},
+        {'x': 3, 'y': 4, 'z': 5}
     ]

@@ -1,17 +1,22 @@
-import pytest
 import sys
 from unittest.mock import MagicMock
 
+import pytest
+
+
 pykinect = MagicMock()
 pykinect2 = MagicMock()
+
 
 @pytest.fixture
 def pykinect_mock():
     return pykinect
 
+
 @pytest.fixture
 def pykinect2_mock():
     return pykinect2
+
 
 module = type(sys)('pykinect')
 sys.modules['pykinect'] = module
